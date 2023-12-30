@@ -29,11 +29,11 @@ interface NSEApi {
         val GET_EQUITY_MASTER = "/equity-master".addBaseUrl()
         val GET_MERGED_DAILY_REPORTS = "/merged-daily-reports?key=%s".addBaseUrl()
         val GET_SEARCH_AUTOCOMPLETE= "/search/autocomplete?q=%s".addBaseUrl()
-        val GET_QUOTE_EQUITY= "quote-equity?symbol=%s".addBaseUrl()
+        val GET_QUOTE_EQUITY= "/quote-equity?symbol=%s".addBaseUrl()
         //[%22EQ%22]&from=29-06-2023&to=29-12-2023"
-        val GET_HISTORICAL_EQUITY= "historical/cm/equity?symbol=%s&series=[%22EQ%22]&from=%s&to=%s".addBaseUrl()
+        val GET_HISTORICAL_EQUITY= "/historical/cm/equity?symbol=%s&from=%s&to=%s".addBaseUrl()
         //NIFTY%2050&from=29-06-2023&to=29-12-2023
-        val GET_HISTORICAL_INDICIES= "historical/indicesHistory?indexType=%s&from=%s&to=%s".addBaseUrl()
+        val GET_HISTORICAL_INDICIES= "/historical/indicesHistory?indexType=%s&from=%s&to=%s".addBaseUrl()
 
         private fun String.addBaseUrl(): String{
             return BASE_URL + this

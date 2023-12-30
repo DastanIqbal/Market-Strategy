@@ -72,6 +72,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
+    implementation("com.jakewharton.threetenabp:threetenabp:1.4.6")
 
     // Network
 

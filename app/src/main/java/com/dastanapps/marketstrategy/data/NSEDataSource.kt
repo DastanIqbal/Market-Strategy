@@ -1,10 +1,8 @@
 package com.dastanapps.marketstrategy.data
 
-import com.dastanapps.marketstrategy.di.NSEAPI
-import com.dastanapps.marketstrategy.network.NSEApi
-import com.dastanapps.marketstrategy.network.NSEApi.Companion.GET_MARKET_STATUS
+import com.dastanapps.marketstrategy.di.models.AppDispatchers
+import com.dastanapps.marketstrategy.network.NSEApi.Companion.GET_HISTORICAL_EQUITY
 import com.dastanapps.marketstrategy.network.NetworkExecutor
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
@@ -15,13 +13,18 @@ import javax.inject.Inject
  */
 
 interface INSEServices {
-    suspend fun getIndices(): String
+    suspend fun historicalData(symbol: String, from: String, to: String): String
 }
 
 class NSEDataSource @Inject constructor(
-    @NSEAPI private val nseApi: NSEApi
+    private val networkExecutor: NetworkExecutor,
+    private val dispatcher: AppDispatchers
 ) : INSEServices {
-    override suspend fun getIndices(): String = withContext(Dispatchers.IO) {
-        return@withContext NetworkExecutor.get(GET_MARKET_STATUS)
-    }
+
+    override suspend fun historicalData(symbol: String, from: String, to: String): String =
+        withContext(dispatcher.io) {
+            return@withContext networkExecutor.get(GET_HISTORICAL_EQUITY.format(symbol, from, to))
+        }
+
+
 }
