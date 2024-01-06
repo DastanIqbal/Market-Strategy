@@ -11,9 +11,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionScreen
+import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionState
 import com.dastanapps.marketstrategy.ui.theme.MarketStrategyTheme
+import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 import com.dastanapps.marketstrategy.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.net.HttpURLConnection
@@ -30,8 +34,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             MarketStrategyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    FutureOptionScreen(
+                        state = FutureOptionState(
+                            searchBoxState = SearchBoxState(
+                                value = mainViewModel.searchValue
+                            ) {
+                                if (it.lowercase().contains("nifty")) {
+                                    mainViewModel.futureOptionData(it.uppercase())
+                                }
+                            },
+                            optionList = mainViewModel.futureOptionList,
+                            selectedItem = mainViewModel.selectedOptionItem
+                        ),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -41,7 +55,6 @@ class MainActivity : ComponentActivity() {
         mainViewModel.indicesLiveData.observeForever {
             Log.d("MainActivity", "onCreate: $it")
         }
-        mainViewModel.futureOption("NIFTY")
     }
 }
 

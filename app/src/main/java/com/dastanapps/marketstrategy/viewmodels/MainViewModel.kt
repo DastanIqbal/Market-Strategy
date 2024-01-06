@@ -1,6 +1,7 @@
 package com.dastanapps.marketstrategy.viewmodels
 
 import android.util.Log
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +12,7 @@ import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.lang.Exception
 import javax.inject.Inject
 
 /**
@@ -23,27 +25,39 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getDaysAverageUseCase: GetDaysAverageUseCase,
     private val futureOptionUseCase: FutureOptionUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val _indicesLiveData = MutableLiveData<String>()
     val indicesLiveData: LiveData<String> = _indicesLiveData
 
+    val futureOptionList = mutableStateOf<List<String>>(arrayListOf())
+    val selectedOptionItem = mutableStateOf<String>("")
+    val searchValue = mutableStateOf<String>("")
+
     fun getIndices() {
-        viewModelScope.launch{
-            val day50 = getDaysAverageUseCase.run(GetDayAverageParam("ITC",50)).average.toString()
+        viewModelScope.launch {
+            val day50 = getDaysAverageUseCase.run(GetDayAverageParam("ITC", 50)).average.toString()
             Log.d("GetDaysAverage", "50 Day : $day50")
             _indicesLiveData.postValue(day50)
-            val day200 = getDaysAverageUseCase.run(GetDayAverageParam("ITC",200)).average.toString()
+            val day200 =
+                getDaysAverageUseCase.run(GetDayAverageParam("ITC", 200)).average.toString()
             Log.d("GetDaysAverage", "200 Day: $day200")
             _indicesLiveData.postValue(day200)
         }
     }
 
-    fun futureOption(symbol:String){
+    fun futureOptionData(symbol: String) {
         viewModelScope.launch {
-            val data = futureOptionUseCase.run(FutureOptionParam(symbol))
-
+            try {
+                val data = futureOptionUseCase.run(FutureOptionParam(symbol))
+                data
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
+    }
 
+    fun futureOptionList() {
+        futureOptionList.value = arrayListOf("NIFTY", "BANKNIFTY", "FINNIFTY", "MIDCPNIFTY")
     }
 }
