@@ -5,7 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dastanapps.marketstrategy.domain.FutureOptionUseCase
 import com.dastanapps.marketstrategy.domain.GetDaysAverageUseCase
+import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -19,7 +21,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val getDaysAverageUseCase: GetDaysAverageUseCase
+    private val getDaysAverageUseCase: GetDaysAverageUseCase,
+    private val futureOptionUseCase: FutureOptionUseCase
 ): ViewModel() {
 
     private val _indicesLiveData = MutableLiveData<String>()
@@ -34,5 +37,13 @@ class MainViewModel @Inject constructor(
             Log.d("GetDaysAverage", "200 Day: $day200")
             _indicesLiveData.postValue(day200)
         }
+    }
+
+    fun futureOption(symbol:String){
+        viewModelScope.launch {
+            val data = futureOptionUseCase.run(FutureOptionParam(symbol))
+
+        }
+
     }
 }

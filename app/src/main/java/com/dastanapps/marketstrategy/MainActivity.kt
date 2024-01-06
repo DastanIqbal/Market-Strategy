@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
         mainViewModel.indicesLiveData.observeForever {
             Log.d("MainActivity", "onCreate: $it")
         }
-        mainViewModel.getIndices()
+        mainViewModel.futureOption("NIFTY")
     }
 }
 
