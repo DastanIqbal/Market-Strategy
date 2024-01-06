@@ -1,0 +1,353 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [androidx.compose.material3:material3:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/53743a3f04e08794bf27c196c36da8d3/transformed/material3-1.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.dagger:hilt-android:2.50] /Users/iqbal/.gradle/caches/transforms-3/f74656bab45ae06e98d2de3a2a07cd8b/transformed/hilt-android-2.50/AndroidManifest.xml:16:1-19:12
+MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f4fc856148398876189fb8d9edd4ca50/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/bf39bd4142fcef78f331264a581af6db/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/ca570e3c40577ea5de67c05311114300/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/27011e80b660d4c282b0ffddd62fe8c0/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/225d1a8820034d4a2052a4a1f70226d2/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/271ccfdf6a98ad3e773fcf8d7d028a99/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fdaa29c35a6597c74639fd57bffc2b47/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/3f3e6f9707e825500068bcfbfe05eacf/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/75088fea365f232cdd7e478209456d07/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/892bcee34f3d5f384fbdd06a741e6e35/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f1f7ee4d2020e7f1466ec7f952c26697/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/c595caf559002b9f39b8bee39b66c88f/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2cde0aa9853e61b2cdf1736fd03a391c/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/918747614824d281eac2a9d5d4cca60c/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/080ced72b24e153f4e77cbff83b541b8/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/iqbal/.gradle/caches/transforms-3/80107d99b96c3a73a4cf691cda1ea429/transformed/fragment-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/c5954549d42ebcbb12dd1aa3e2bd3db7/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/f97770b9b0a8c477cb59db6bbd83a994/transformed/activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/610770cc7b0876b3a97c7be23d932f2e/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/ae09deac0f06ac4ded77116a6bdfc252/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/9cd9564f81a0ab5878af46c7b630ff13/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/bde2154589b881a368051c835b843321/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/102680f5e6668a0286a2149f4d494352/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/6ba50029ad489482a27a0e98b1e6fe34/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/9dd3e3c0ae2f9bfd07a262c63b0fc3df/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/36cd36e411c45faf96405c7182ba421a/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/6d6aeb545ba73fe624d74e6375bcd70d/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/32b5165fd4510d7c9de3992b95e7d46e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/0ac14b174aadc6c0a37a9bafb09308dc/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/d6823ea7909cc67bc5a2fe4ce2c8603e/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/996308dd7c831455e5ea9882f8aeb446/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/4cef61a1fbbff0d27b5c76086dd7794b/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/750f4ad675bde2599053d7aff5dd54dc/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/5af141bdadebb9281f480a12fefd0d08/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2324bfd461590aedc46f2b45276330c2/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/13354afdb03f3da32bbf474a3ed6390d/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.1] /Users/iqbal/.gradle/caches/transforms-3/a86dd23a51527dcb3bf98bee6512fabc/transformed/annotation-experimental-1.3.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/029fb39ef448c22fbd12f99b3dcb37cd/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/da0ac962c8c3ac0e3c6272e34bdb5ffa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqbal/.gradle/caches/transforms-3/889b41ed2cf5e41a339d494f75208225/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/284d6b5223e9e3fb04f8ac6c4cf8f3cf/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.4.6] /Users/iqbal/.gradle/caches/transforms-3/d381d348b609ea886a5a79da23297919/transformed/threetenabp-1.4.6/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /Users/iqbal/.gradle/caches/transforms-3/76065bb9f4db4cbb7acefc9e75c94fb2/transformed/dagger-lint-aar-2.50/AndroidManifest.xml:16:1-19:12
+	package
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:8:5-31:19
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:8:5-31:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/da0ac962c8c3ac0e3c6272e34bdb5ffa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/da0ac962c8c3ac0e3c6272e34bdb5ffa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.4.6] /Users/iqbal/.gradle/caches/transforms-3/d381d348b609ea886a5a79da23297919/transformed/threetenabp-1.4.6/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.4.6] /Users/iqbal/.gradle/caches/transforms-3/d381d348b609ea886a5a79da23297919/transformed/threetenabp-1.4.6/AndroidManifest.xml:7:5-20
+	android:extractNativeLibs
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:14:9-41
+	android:fullBackupContent
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:12:9-54
+	android:roundIcon
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:16:9-54
+	tools:targetApi
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:19:9-29
+	android:icon
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:18:9-52
+	android:networkSecurityConfig
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:15:9-59
+	android:dataExtractionRules
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:11:9-65
+	android:name
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:9:9-28
+activity#com.dastanapps.marketstrategy.MainActivity
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:20:9-30:20
+	android:label
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:23:13-45
+	android:exported
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:22:13-36
+	android:theme
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:24:13-56
+	android:name
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:21:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml:28:27-74
+uses-sdk
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+MERGED from [androidx.compose.material3:material3:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/53743a3f04e08794bf27c196c36da8d3/transformed/material3-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/53743a3f04e08794bf27c196c36da8d3/transformed/material3-1.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.dagger:hilt-android:2.50] /Users/iqbal/.gradle/caches/transforms-3/f74656bab45ae06e98d2de3a2a07cd8b/transformed/hilt-android-2.50/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.50] /Users/iqbal/.gradle/caches/transforms-3/f74656bab45ae06e98d2de3a2a07cd8b/transformed/hilt-android-2.50/AndroidManifest.xml:18:3-42
+MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f4fc856148398876189fb8d9edd4ca50/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f4fc856148398876189fb8d9edd4ca50/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/bf39bd4142fcef78f331264a581af6db/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/bf39bd4142fcef78f331264a581af6db/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/ca570e3c40577ea5de67c05311114300/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/ca570e3c40577ea5de67c05311114300/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/27011e80b660d4c282b0ffddd62fe8c0/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/27011e80b660d4c282b0ffddd62fe8c0/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/225d1a8820034d4a2052a4a1f70226d2/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/225d1a8820034d4a2052a4a1f70226d2/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/271ccfdf6a98ad3e773fcf8d7d028a99/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/271ccfdf6a98ad3e773fcf8d7d028a99/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fdaa29c35a6597c74639fd57bffc2b47/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fdaa29c35a6597c74639fd57bffc2b47/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/3f3e6f9707e825500068bcfbfe05eacf/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/3f3e6f9707e825500068bcfbfe05eacf/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/75088fea365f232cdd7e478209456d07/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/75088fea365f232cdd7e478209456d07/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/892bcee34f3d5f384fbdd06a741e6e35/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/892bcee34f3d5f384fbdd06a741e6e35/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f1f7ee4d2020e7f1466ec7f952c26697/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/f1f7ee4d2020e7f1466ec7f952c26697/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/c595caf559002b9f39b8bee39b66c88f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/c595caf559002b9f39b8bee39b66c88f/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2cde0aa9853e61b2cdf1736fd03a391c/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2cde0aa9853e61b2cdf1736fd03a391c/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/918747614824d281eac2a9d5d4cca60c/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/918747614824d281eac2a9d5d4cca60c/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/080ced72b24e153f4e77cbff83b541b8/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/080ced72b24e153f4e77cbff83b541b8/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/iqbal/.gradle/caches/transforms-3/80107d99b96c3a73a4cf691cda1ea429/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.1] /Users/iqbal/.gradle/caches/transforms-3/80107d99b96c3a73a4cf691cda1ea429/transformed/fragment-1.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/c5954549d42ebcbb12dd1aa3e2bd3db7/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/c5954549d42ebcbb12dd1aa3e2bd3db7/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/f97770b9b0a8c477cb59db6bbd83a994/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/f97770b9b0a8c477cb59db6bbd83a994/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/610770cc7b0876b3a97c7be23d932f2e/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/iqbal/.gradle/caches/transforms-3/610770cc7b0876b3a97c7be23d932f2e/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/ae09deac0f06ac4ded77116a6bdfc252/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/ae09deac0f06ac4ded77116a6bdfc252/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/9cd9564f81a0ab5878af46c7b630ff13/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/9cd9564f81a0ab5878af46c7b630ff13/transformed/lifecycle-livedata-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/bde2154589b881a368051c835b843321/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/bde2154589b881a368051c835b843321/transformed/lifecycle-livedata-core-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/102680f5e6668a0286a2149f4d494352/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/102680f5e6668a0286a2149f4d494352/transformed/lifecycle-viewmodel-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/6ba50029ad489482a27a0e98b1e6fe34/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/6ba50029ad489482a27a0e98b1e6fe34/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/9dd3e3c0ae2f9bfd07a262c63b0fc3df/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/iqbal/.gradle/caches/transforms-3/9dd3e3c0ae2f9bfd07a262c63b0fc3df/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/36cd36e411c45faf96405c7182ba421a/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/36cd36e411c45faf96405c7182ba421a/transformed/lifecycle-viewmodel-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/6d6aeb545ba73fe624d74e6375bcd70d/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/6d6aeb545ba73fe624d74e6375bcd70d/transformed/lifecycle-viewmodel-savedstate-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/32b5165fd4510d7c9de3992b95e7d46e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/32b5165fd4510d7c9de3992b95e7d46e/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/0ac14b174aadc6c0a37a9bafb09308dc/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/0ac14b174aadc6c0a37a9bafb09308dc/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/d6823ea7909cc67bc5a2fe4ce2c8603e/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/d6823ea7909cc67bc5a2fe4ce2c8603e/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/996308dd7c831455e5ea9882f8aeb446/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/996308dd7c831455e5ea9882f8aeb446/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/4cef61a1fbbff0d27b5c76086dd7794b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/4cef61a1fbbff0d27b5c76086dd7794b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/750f4ad675bde2599053d7aff5dd54dc/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/750f4ad675bde2599053d7aff5dd54dc/transformed/lifecycle-runtime-2.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/5af141bdadebb9281f480a12fefd0d08/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/5af141bdadebb9281f480a12fefd0d08/transformed/lifecycle-runtime-ktx-2.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2324bfd461590aedc46f2b45276330c2/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/2324bfd461590aedc46f2b45276330c2/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/13354afdb03f3da32bbf474a3ed6390d/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/13354afdb03f3da32bbf474a3ed6390d/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.1] /Users/iqbal/.gradle/caches/transforms-3/a86dd23a51527dcb3bf98bee6512fabc/transformed/annotation-experimental-1.3.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.1] /Users/iqbal/.gradle/caches/transforms-3/a86dd23a51527dcb3bf98bee6512fabc/transformed/annotation-experimental-1.3.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/029fb39ef448c22fbd12f99b3dcb37cd/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/029fb39ef448c22fbd12f99b3dcb37cd/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/da0ac962c8c3ac0e3c6272e34bdb5ffa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/da0ac962c8c3ac0e3c6272e34bdb5ffa/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqbal/.gradle/caches/transforms-3/889b41ed2cf5e41a339d494f75208225/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/iqbal/.gradle/caches/transforms-3/889b41ed2cf5e41a339d494f75208225/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/284d6b5223e9e3fb04f8ac6c4cf8f3cf/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/iqbal/.gradle/caches/transforms-3/284d6b5223e9e3fb04f8ac6c4cf8f3cf/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.4.6] /Users/iqbal/.gradle/caches/transforms-3/d381d348b609ea886a5a79da23297919/transformed/threetenabp-1.4.6/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton.threetenabp:threetenabp:1.4.6] /Users/iqbal/.gradle/caches/transforms-3/d381d348b609ea886a5a79da23297919/transformed/threetenabp-1.4.6/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /Users/iqbal/.gradle/caches/transforms-3/76065bb9f4db4cbb7acefc9e75c94fb2/transformed/dagger-lint-aar-2.50/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.50] /Users/iqbal/.gradle/caches/transforms-3/76065bb9f4db4cbb7acefc9e75c94fb2/transformed/dagger-lint-aar-2.50/AndroidManifest.xml:18:3-42
+	android:targetSdkVersion
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/iqbal/MEGA/Study/Projects/Personal/MarketStrategy/app/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/85997d4cd85874e43266757de67b3ed6/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.5.0] /Users/iqbal/.gradle/caches/transforms-3/fed8d4cb5a92278ff4337ad927e8c031/transformed/ui-test-manifest-1.5.0/AndroidManifest.xml:24:13-63
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/iqbal/.gradle/caches/transforms-3/8055afa8142c7bc713704650641330ad/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/iqbal/.gradle/caches/transforms-3/3daf2d1f1e09a0f6986f5438d275772a/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.2] /Users/iqbal/.gradle/caches/transforms-3/75e7bd74098f494a99e5ddd46bdb2520/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.dastanapps.marketstrategy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.dastanapps.marketstrategy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/iqbal/.gradle/caches/transforms-3/65863f60bae230ce550da666ff2e251b/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/iqbal/.gradle/caches/transforms-3/63226a8a18c2d8e0231138116e47c1b3/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
