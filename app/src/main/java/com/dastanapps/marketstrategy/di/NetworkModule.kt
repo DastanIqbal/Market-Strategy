@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.Arrays
 import java.util.concurrent.TimeUnit
 import javax.inject.Qualifier
+import javax.inject.Singleton
 
 
 /**
@@ -27,6 +28,11 @@ import javax.inject.Qualifier
 @Qualifier
 @MustBeDocumented
 annotation class NSEAPI
+
+@Retention(AnnotationRetention.RUNTIME)
+@Qualifier
+@MustBeDocumented
+annotation class MoneyControlAPI
 
 @InstallIn(SingletonComponent::class)
 @Module
@@ -43,20 +49,33 @@ object NetworkModule {
             .readTimeout(120, TimeUnit.SECONDS)
             .connectTimeout(120, TimeUnit.SECONDS)
             .pingInterval(120, TimeUnit.MILLISECONDS)
-            .protocols(listOf(Protocol.HTTP_2,Protocol.HTTP_1_1))
+            .protocols(listOf(Protocol.HTTP_2, Protocol.HTTP_1_1))
             .addInterceptor(headerInterceptor)
             .addInterceptor(loggingInterceptor)
             .build()
     }
 
-    @NSEAPI
     @Provides
-    fun provideNSEApi(okHttpClient: OkHttpClient): NSEApi {
+    fun provideRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
-            .baseUrl(NSEApi.BASE_URL)
-            .build()
+        return retrofit
+    }
+
+    @NSEAPI
+    @Provides
+    @Singleton
+    fun provideNSEApi(builder: Retrofit.Builder): NSEApi {
+        val retrofit = builder.baseUrl(NSEApi.BASE_URL).build()
+        return retrofit.create(NSEApi::class.java)
+    }
+
+    @MoneyControlAPI
+    @Provides
+    @Singleton
+    fun provideMoneyControlApi(builder: Retrofit.Builder): NSEApi {
+        val retrofit = builder.baseUrl(NSEApi.BASE_URL).build()
         return retrofit.create(NSEApi::class.java)
     }
 

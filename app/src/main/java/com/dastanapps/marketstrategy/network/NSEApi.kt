@@ -17,7 +17,7 @@ enum class MergedReport(type:String){
 
 interface NSEApi {
 
-    @GET("api/marketStatus")
+    @GET("/marketStatus")
     suspend fun getIndices(): JSONObject
 
     companion object {
@@ -34,6 +34,7 @@ interface NSEApi {
         val GET_HISTORICAL_EQUITY= "/historical/cm/equity?symbol=%s&from=%s&to=%s".addBaseUrl()
         //NIFTY%2050&from=29-06-2023&to=29-12-2023
         val GET_HISTORICAL_INDICIES= "/historical/indicesHistory?indexType=%s&from=%s&to=%s".addBaseUrl()
+        val GET_OPTION_CHAIN_INDICIES= "/option-chain-indices?symbol=%s".addBaseUrl()
 
         private fun String.addBaseUrl(): String{
             return BASE_URL + this

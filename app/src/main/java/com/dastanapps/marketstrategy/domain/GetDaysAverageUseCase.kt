@@ -1,6 +1,6 @@
 package com.dastanapps.marketstrategy.domain
 
-import com.dastanapps.marketstrategy.data.NSERepo
+import com.dastanapps.marketstrategy.data.nse.NSERepo
 import com.dastanapps.marketstrategy.data.models.EquityData
 import com.dastanapps.marketstrategy.domain.base.UseCase
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam

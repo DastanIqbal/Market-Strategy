@@ -1,4 +1,4 @@
-package com.dastanapps.marketstrategy.data
+package com.dastanapps.marketstrategy.data.nse
 
 import com.dastanapps.marketstrategy.data.models.HistoricalData
 import com.dastanapps.marketstrategy.data.models.mapToHistoricalData
