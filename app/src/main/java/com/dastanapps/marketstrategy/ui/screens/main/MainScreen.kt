@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.dastanapps.marketstrategy.data.models.FutureOptionIndicesData
 import com.dastanapps.marketstrategy.ui.theme.component.Dropdown
 import com.dastanapps.marketstrategy.ui.theme.component.SearchBox
 import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
@@ -23,7 +24,8 @@ import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 data class FutureOptionState(
     val searchBoxState: SearchBoxState,
     val optionList: MutableState<List<String>> = mutableStateOf(arrayListOf()),
-    val selectedItem: MutableState<String> = mutableStateOf("")
+    val selectedItem: MutableState<String> = mutableStateOf(""),
+    val displayData: MutableState<FutureOptionIndicesData> = mutableStateOf(FutureOptionIndicesData.empty())
 )
 
 @Composable
@@ -42,6 +44,7 @@ fun FutureOptionScreen(
             ){
                 state.selectedItem.value = it
             }
+            Text(text = "Underlying Value: ${state.displayData.value.underlyingValue}",modifier = Modifier.padding(16.dp))
         }
     }
 }

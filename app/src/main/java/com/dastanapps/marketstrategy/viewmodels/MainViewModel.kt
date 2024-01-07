@@ -6,10 +6,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dastanapps.marketstrategy.data.models.FutureOptionIndicesData
 import com.dastanapps.marketstrategy.domain.FutureOptionUseCase
 import com.dastanapps.marketstrategy.domain.GetDaysAverageUseCase
 import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
+import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionState
+import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -30,9 +33,28 @@ class MainViewModel @Inject constructor(
     private val _indicesLiveData = MutableLiveData<String>()
     val indicesLiveData: LiveData<String> = _indicesLiveData
 
+    private val _futureOptionLiveData = MutableLiveData<FutureOptionIndicesData>()
+    val futureOptionLiveData: LiveData<FutureOptionIndicesData> = _futureOptionLiveData
+
     val futureOptionList = mutableStateOf<List<String>>(arrayListOf())
-    val selectedOptionItem = mutableStateOf<String>("")
-    val searchValue = mutableStateOf<String>("")
+    val selectedOptionItem = mutableStateOf("")
+    val searchValue = mutableStateOf("")
+    val futureOptionIndicesData = mutableStateOf(FutureOptionIndicesData.empty())
+
+    val fustionOptionState by lazy {
+        FutureOptionState(
+            searchBoxState = SearchBoxState(
+                value = searchValue
+            ) {
+                if (it.lowercase().contains("nifty")) {
+                    futureOptionData(it.uppercase())
+                }
+            },
+            optionList = futureOptionList,
+            selectedItem = selectedOptionItem,
+            displayData = futureOptionIndicesData
+        )
+    }
 
     fun getIndices() {
         viewModelScope.launch {
@@ -50,7 +72,8 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val data = futureOptionUseCase.run(FutureOptionParam(symbol))
-                data
+//                _futureOptionLiveData.postValue(data)
+                futureOptionIndicesData.value = data
             } catch (e: Exception) {
                 e.printStackTrace()
             }

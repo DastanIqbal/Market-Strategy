@@ -67,7 +67,21 @@ data class FutureOptionIndicesData(
     val call: List<OptionTypeData>,
     val put: List<OptionTypeData>,
     val records: List<OptionTypeData>
-)
+) {
+    companion object {
+        fun empty(): FutureOptionIndicesData {
+            return FutureOptionIndicesData(
+                "",
+                FilterBy(emptyList(), emptyList()),
+                "",
+                0.0,
+                emptyList(),
+                emptyList(),
+                emptyList()
+            )
+        }
+    }
+}
 
 fun FutureOptionIndicesResponse.mapTo(): FutureOptionIndicesData {
     val strikePriceList = mutableListOf<Long>()

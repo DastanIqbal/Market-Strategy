@@ -35,17 +35,7 @@ class MainActivity : ComponentActivity() {
             MarketStrategyTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     FutureOptionScreen(
-                        state = FutureOptionState(
-                            searchBoxState = SearchBoxState(
-                                value = mainViewModel.searchValue
-                            ) {
-                                if (it.lowercase().contains("nifty")) {
-                                    mainViewModel.futureOptionData(it.uppercase())
-                                }
-                            },
-                            optionList = mainViewModel.futureOptionList,
-                            selectedItem = mainViewModel.selectedOptionItem
-                        ),
+                        state = mainViewModel.fustionOptionState,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -53,6 +43,10 @@ class MainActivity : ComponentActivity() {
         }
 
         mainViewModel.indicesLiveData.observeForever {
+            Log.d("MainActivity", "onCreate: $it")
+        }
+
+        mainViewModel.futureOptionLiveData.observeForever {
             Log.d("MainActivity", "onCreate: $it")
         }
     }
