@@ -13,7 +13,7 @@ import javax.inject.Inject
  *
  */
 
-interface INSEServices {
+interface INSEDataSource {
     suspend fun historicalData(symbol: String, from: String, to: String): String
     suspend fun fnoData(symbol: String): String
 }
@@ -21,7 +21,7 @@ interface INSEServices {
 class NSEDataSource @Inject constructor(
     private val networkExecutor: NetworkExecutor,
     private val dispatcher: AppDispatchers
-) : INSEServices {
+) : INSEDataSource {
 
     override suspend fun historicalData(symbol: String, from: String, to: String): String =
         withContext(dispatcher.io) {

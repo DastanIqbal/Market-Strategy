@@ -23,7 +23,7 @@ interface INSERepo {
 }
 
 class NSERepo @Inject constructor(
-    private val nseData: NSEDataSource,
+    private val nseData: INSEDataSource,
     private val dispatchers: AppDispatchers
 ) : INSERepo {
     override suspend fun historicalData(symbol: String, from: String, to: String): HistoricalData =
