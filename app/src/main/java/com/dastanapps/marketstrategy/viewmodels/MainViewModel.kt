@@ -36,19 +36,19 @@ class MainViewModel @Inject constructor(
     private val _futureOptionLiveData = MutableLiveData<FutureOptionIndicesData>()
     val futureOptionLiveData: LiveData<FutureOptionIndicesData> = _futureOptionLiveData
 
-    val futureOptionList = mutableStateOf<List<String>>(arrayListOf())
+    private val futureOptionList = mutableStateOf<List<String>>(arrayListOf(
+        "NIFTY", "BANKNIFTY"
+    ))
     val selectedOptionItem = mutableStateOf("")
     val searchValue = mutableStateOf("")
     val futureOptionIndicesData = mutableStateOf(FutureOptionIndicesData.empty())
 
-    val fustionOptionState by lazy {
+    val futureOptionState by lazy {
         FutureOptionState(
             searchBoxState = SearchBoxState(
                 value = searchValue
             ) {
-                if (it.lowercase().contains("nifty")) {
-                    futureOptionData(it.uppercase())
-                }
+                futureOptionData(it.uppercase())
             },
             optionList = futureOptionList,
             selectedItem = selectedOptionItem,

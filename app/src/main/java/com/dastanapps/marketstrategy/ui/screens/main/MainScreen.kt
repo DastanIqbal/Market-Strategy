@@ -35,9 +35,7 @@ fun FutureOptionScreen(
 ) {
 
     Column(modifier = modifier) {
-        SearchBox(state = state.searchBoxState)
         Row {
-            Text(text = "Choose Option: ", modifier = Modifier.padding(16.dp))
             Dropdown(
                 items = state.optionList.value,
                 selectedItem = state.selectedItem.value

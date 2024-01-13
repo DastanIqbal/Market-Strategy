@@ -35,7 +35,7 @@ fun Dropdown(
             .clickable { expanded.value = !expanded.value }
     ) {
         Text(
-            text = selectedItem,
+            text = selectedItem.ifEmpty { "Choose Symbol" },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
@@ -43,7 +43,8 @@ fun Dropdown(
 
         DropdownMenu(
             expanded = expanded.value,
-            onDismissRequest = { expanded.value = false }
+            onDismissRequest = { expanded.value = false },
+            modifier = Modifier.fillMaxWidth()
         ) {
             items.forEach { item ->
                 DropdownMenuItem(
