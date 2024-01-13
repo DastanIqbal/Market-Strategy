@@ -2,13 +2,18 @@ package com.dastanapps.marketstrategy.ui.screens.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -112,7 +117,7 @@ fun CallPutItem(
     OutlinedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp, top = 8.dp),
+            .padding(start = 16.dp, end = 16.dp, top = 12.dp),
         shape = RoundedCornerShape(8.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -140,11 +145,15 @@ fun CallPutItem(
             Row(modifier = Modifier.padding(8.dp)) {
                 Button(
                     modifier = Modifier.padding(end = 8.dp),
+                    shape = RoundedCornerShape(8.dp),
                     onClick = { optionActionClick.invoke(optionTypeData, TradeOption.BUY) }) {
                     Text(text = "Buy")
                 }
 
-                Button(onClick = { optionActionClick.invoke(optionTypeData, TradeOption.SELL) }) {
+                Button(
+                    modifier = Modifier,
+                    shape = RoundedCornerShape(8.dp),
+                    onClick = { optionActionClick.invoke(optionTypeData, TradeOption.SELL) }) {
                     Text(text = "Sell")
                 }
             }
