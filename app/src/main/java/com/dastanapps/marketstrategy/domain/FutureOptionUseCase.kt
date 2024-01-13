@@ -3,7 +3,9 @@ package com.dastanapps.marketstrategy.domain
 import com.dastanapps.marketstrategy.data.models.FutureOptionIndicesData
 import com.dastanapps.marketstrategy.data.nse.NSERepo
 import com.dastanapps.marketstrategy.domain.base.UseCase
+import com.dastanapps.marketstrategy.domain.models.FutureOptionDisplayB
 import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
+import com.dastanapps.marketstrategy.domain.models.map
 import javax.inject.Inject
 
 /**

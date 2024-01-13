@@ -1,16 +1,20 @@
 package com.dastanapps.marketstrategy.viewmodels
 
 import android.util.Log
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dastanapps.marketstrategy.data.models.FutureOptionIndicesData
+import com.dastanapps.marketstrategy.data.models.OptionTypeData
 import com.dastanapps.marketstrategy.domain.FutureOptionUseCase
 import com.dastanapps.marketstrategy.domain.GetDaysAverageUseCase
+import com.dastanapps.marketstrategy.domain.models.FutureOptionDisplayB
 import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
+import com.dastanapps.marketstrategy.domain.models.map
 import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionState
 import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 import com.dastanapps.marketstrategy.viewmodels.models.SelectedValue
@@ -36,7 +40,7 @@ class MainViewModel @Inject constructor(
         arrayListOf("NIFTY", "BANKNIFTY", "FINNIFTY", "MIDCPNIFTY")
     )
     val searchValue = mutableStateOf("")
-    val futureOptionIndicesData = mutableStateOf(FutureOptionIndicesData.empty())
+    val futureOptionDisplayData = mutableStateOf(FutureOptionDisplayB.empty())
 
     private var _futureOptionIndicesData: FutureOptionIndicesData? = null
 
@@ -57,8 +61,13 @@ class MainViewModel @Inject constructor(
             },
             optionList = futureOptionList,
             selectedItem = selectedValue,
-            displayData = futureOptionIndicesData
+            displayData = futureOptionDisplayData,
         ){
+            val list = _futureOptionIndicesData?.records?.filter {
+                it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
+                        it.expiryDate == selectedValue.expiryDate.value.value
+            }
+            futureOptionDisplayData.value.fnoCallPutList.value = list?.toList()?: emptyList()
         }
     }
 
@@ -76,7 +85,8 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val data = futureOptionUseCase.run(FutureOptionParam(symbol))
-                futureOptionIndicesData.value = data
+                _futureOptionIndicesData = data
+                futureOptionDisplayData.value = data.map()
             } catch (e: Exception) {
                 e.printStackTrace()
             }

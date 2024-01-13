@@ -11,7 +11,7 @@ import com.dastanapps.marketstrategy.utils.toNullEmpty
  */
 
 enum class OptionType {
-    CALL, PUT
+    NONE, CALL, PUT
 }
 
 data class OptionTypeData(
@@ -30,6 +30,15 @@ data class OptionTypeData(
     val openInterest: Double,
 ) {
     companion object {
+        fun empty() = OptionTypeData(
+            OptionType.NONE,
+            "", 0.0,
+            0.0, 0.0,
+            0.0, 0.0,
+            0.0, 0.0, 0.0,
+            0.0, 0.0,0.0
+        )
+
         fun create(
             type: OptionType,
             data: FutureOptionIndicesResponse.Filtered.Data.CallPutData
@@ -57,7 +66,11 @@ data class OptionTypeData(
 data class FilterBy(
     val strikePrice: List<Long>,
     val expiriesDate: List<String>,
-)
+) {
+    companion object {
+        fun empty() = FilterBy(emptyList(), emptyList())
+    }
+}
 
 data class FutureOptionIndicesData(
     val symbol: String,
@@ -72,7 +85,7 @@ data class FutureOptionIndicesData(
         fun empty(): FutureOptionIndicesData {
             return FutureOptionIndicesData(
                 "",
-                FilterBy(emptyList(), emptyList()),
+                FilterBy.empty(),
                 "",
                 0.0,
                 emptyList(),
