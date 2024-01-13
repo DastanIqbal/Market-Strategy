@@ -44,8 +44,8 @@ fun FutureOptionScreen(
             ){
                 state.selectedItem.value = it
             }
-            Text(text = "Underlying Value: ${state.displayData.value.underlyingValue}",modifier = Modifier.padding(16.dp))
         }
+        Text(text = "Underlying Value: ${state.displayData.value.underlyingValue}",modifier = Modifier.padding(16.dp))
     }
 }
 
