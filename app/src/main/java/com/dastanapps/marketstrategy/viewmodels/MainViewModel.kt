@@ -55,17 +55,9 @@ class MainViewModel @Inject constructor(
         expiryDate = SelectedValueItem(mutableStateOf("")),
     )
 
-    private val getQuotesClick = {
-        val list = _futureOptionIndicesData?.records?.filter {
-            it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
-                    it.expiryDate == selectedValue.expiryDate.value.value
-        }
-        futureOptionDisplayData.value.fnoCallPutList.value = list?.toList() ?: emptyList()
-    }
+    var toastCallback: ((String) -> Unit)? = null
 
-    var toastCallback:((String)->Unit)? = null
-
-    private val optionActionClick: (OptionTypeData, TradeOption) -> Unit = { data, trade,->
+    private val optionActionClick: (OptionTypeData, TradeOption) -> Unit = { data, trade ->
         viewModelScope.launch(Dispatchers.IO) {
             database.orderDao().insertOrder(
                 OrderEntity(
@@ -77,7 +69,7 @@ class MainViewModel @Inject constructor(
                     status = OrderStatus.PENDING.name
                 )
             )
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 toastCallback?.invoke("Order Executed")
             }
         }
@@ -94,7 +86,7 @@ class MainViewModel @Inject constructor(
             optionList = futureOptionList,
             selectedItem = selectedValue,
             displayData = futureOptionDisplayData,
-            getQuotesClick = getQuotesClick,
+            getQuotesClick = { getQuotes() },
             optionActionClick = optionActionClick
         )
     }
@@ -118,6 +110,18 @@ class MainViewModel @Inject constructor(
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+    }
+
+    private fun getQuotes() {
+        viewModelScope.launch {
+            val data = futureOptionUseCase.run(FutureOptionParam(selectedValue.symbol.value.value))
+            _futureOptionIndicesData = data
+            val list = _futureOptionIndicesData?.records?.filter {
+                it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
+                        it.expiryDate == selectedValue.expiryDate.value.value
+            }
+            futureOptionDisplayData.value.fnoCallPutList.value = list?.toList() ?: emptyList()
         }
     }
 }
