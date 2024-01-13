@@ -16,6 +16,7 @@ import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
 import com.dastanapps.marketstrategy.domain.models.map
 import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionState
+import com.dastanapps.marketstrategy.ui.screens.main.models.TradeOption
 import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 import com.dastanapps.marketstrategy.viewmodels.models.SelectedValue
 import com.dastanapps.marketstrategy.viewmodels.models.SelectedValueItem
@@ -52,6 +53,21 @@ class MainViewModel @Inject constructor(
         expiryDate = SelectedValueItem(mutableStateOf("")),
     )
 
+    private val getQuotesClick = {
+        val list = _futureOptionIndicesData?.records?.filter {
+            it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
+                    it.expiryDate == selectedValue.expiryDate.value.value
+        }
+        futureOptionDisplayData.value.fnoCallPutList.value = list?.toList()?: emptyList()
+    }
+
+    private val optionActionClick:(OptionTypeData, TradeOption) ->Unit = { data, trade ->
+        Log.d("TAG", data.toString())
+        Log.d("TAG", trade.toString())
+    }
+
+
+
     val futureOptionState by lazy {
         FutureOptionState(
             searchBoxState = SearchBoxState(
@@ -62,13 +78,9 @@ class MainViewModel @Inject constructor(
             optionList = futureOptionList,
             selectedItem = selectedValue,
             displayData = futureOptionDisplayData,
-        ){
-            val list = _futureOptionIndicesData?.records?.filter {
-                it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
-                        it.expiryDate == selectedValue.expiryDate.value.value
-            }
-            futureOptionDisplayData.value.fnoCallPutList.value = list?.toList()?: emptyList()
-        }
+            getQuotesClick = getQuotesClick,
+            optionActionClick = optionActionClick
+        )
     }
 
     fun getIndices() {
