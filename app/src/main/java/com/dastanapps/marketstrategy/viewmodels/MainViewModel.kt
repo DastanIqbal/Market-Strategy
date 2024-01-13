@@ -13,6 +13,8 @@ import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.domain.models.GetDayAverageParam
 import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionState
 import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
+import com.dastanapps.marketstrategy.viewmodels.models.SelectedValue
+import com.dastanapps.marketstrategy.viewmodels.models.SelectedValueItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -30,18 +32,21 @@ class MainViewModel @Inject constructor(
     private val futureOptionUseCase: FutureOptionUseCase
 ) : ViewModel() {
 
-    private val _indicesLiveData = MutableLiveData<String>()
-    val indicesLiveData: LiveData<String> = _indicesLiveData
-
-    private val _futureOptionLiveData = MutableLiveData<FutureOptionIndicesData>()
-    val futureOptionLiveData: LiveData<FutureOptionIndicesData> = _futureOptionLiveData
-
-    private val futureOptionList = mutableStateOf<List<String>>(arrayListOf(
-        "NIFTY", "BANKNIFTY"
-    ))
-    val selectedOptionItem = mutableStateOf("")
+    private val futureOptionList = mutableStateOf<List<String>>(
+        arrayListOf("NIFTY", "BANKNIFTY", "FINNIFTY", "MIDCPNIFTY")
+    )
     val searchValue = mutableStateOf("")
     val futureOptionIndicesData = mutableStateOf(FutureOptionIndicesData.empty())
+
+    private var _futureOptionIndicesData: FutureOptionIndicesData? = null
+
+    private val selectedValue = SelectedValue(
+        symbol = SelectedValueItem(mutableStateOf("")){
+            futureOptionData(it)
+        },
+        strikePrice = SelectedValueItem(mutableStateOf("")),
+        expiryDate = SelectedValueItem(mutableStateOf("")),
+    )
 
     val futureOptionState by lazy {
         FutureOptionState(
@@ -51,20 +56,19 @@ class MainViewModel @Inject constructor(
                 futureOptionData(it.uppercase())
             },
             optionList = futureOptionList,
-            selectedItem = selectedOptionItem,
+            selectedItem = selectedValue,
             displayData = futureOptionIndicesData
-        )
+        ){
+        }
     }
 
     fun getIndices() {
         viewModelScope.launch {
             val day50 = getDaysAverageUseCase.run(GetDayAverageParam("ITC", 50)).average.toString()
             Log.d("GetDaysAverage", "50 Day : $day50")
-            _indicesLiveData.postValue(day50)
             val day200 =
                 getDaysAverageUseCase.run(GetDayAverageParam("ITC", 200)).average.toString()
             Log.d("GetDaysAverage", "200 Day: $day200")
-            _indicesLiveData.postValue(day200)
         }
     }
 
@@ -72,15 +76,10 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val data = futureOptionUseCase.run(FutureOptionParam(symbol))
-//                _futureOptionLiveData.postValue(data)
                 futureOptionIndicesData.value = data
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
-    }
-
-    fun futureOptionList() {
-        futureOptionList.value = arrayListOf("NIFTY", "BANKNIFTY", "FINNIFTY", "MIDCPNIFTY")
     }
 }

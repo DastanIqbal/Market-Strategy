@@ -51,14 +51,6 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
-        mainViewModel.indicesLiveData.observeForever {
-            Log.d("MainActivity", "onCreate: $it")
-        }
-
-        mainViewModel.futureOptionLiveData.observeForever {
-            Log.d("MainActivity", "onCreate: $it")
-        }
     }
 }
 

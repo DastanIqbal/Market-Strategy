@@ -26,17 +26,18 @@ import androidx.compose.ui.unit.dp
 fun Dropdown(
     items: List<String>,
     selectedItem: String,
+    modifier: Modifier = Modifier,
     onSelectedItemChanged: (String) -> Unit
 ) {
     val expanded = remember { mutableStateOf(false) }
 
    Box(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
             .clickable { expanded.value = !expanded.value }
     ) {
         Text(
-            text = selectedItem.ifEmpty { "Choose Symbol" },
-            modifier = Modifier
+            text = selectedItem,
+            modifier = modifier
                 .fillMaxWidth()
                 .padding(16.dp)
         )
@@ -44,7 +45,7 @@ fun Dropdown(
         DropdownMenu(
             expanded = expanded.value,
             onDismissRequest = { expanded.value = false },
-            modifier = Modifier.fillMaxWidth()
+            modifier = modifier
         ) {
             items.forEach { item ->
                 DropdownMenuItem(
