@@ -116,18 +116,26 @@ fun CallPutItem(
         shape = RoundedCornerShape(8.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = "Option: ${optionTypeData.type.name}", modifier = Modifier.padding(4.dp))
-            Text(text = "LTP: ${optionTypeData.lastTradedPrice}", modifier = Modifier.padding(4.dp))
-            Text(text = "Bid Price: ${optionTypeData.bidPrice}", modifier = Modifier.padding(4.dp))
-            Text(
-                text = "Bid Quantity: ${optionTypeData.bidQuantity}",
-                modifier = Modifier.padding(4.dp)
-            )
-            Text(text = "Ask Price: ${optionTypeData.askPrice}", modifier = Modifier.padding(4.dp))
-            Text(
-                text = "Ask Quantity: ${optionTypeData.askQuantity}",
-                modifier = Modifier.padding(4.dp)
-            )
+            Row {
+                Text(text = "Option: ${optionTypeData.type.name}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
+                Text(text = "LTP: ${optionTypeData.lastTradedPrice}", modifier = Modifier.padding(4.dp))
+                Text(text = "OI: ${optionTypeData.openInterest}", modifier = Modifier.padding(4.dp))
+            }
+            Row {
+                Text(text = "Bid Price: ${optionTypeData.bidPrice}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
+                Text(
+                    text = "Qty: ${optionTypeData.bidQuantity}",
+                    modifier = Modifier.padding(4.dp)
+                )
+            }
+
+            Row {
+                Text(text = "Ask Price: ${optionTypeData.askPrice}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
+                Text(
+                    text = "Qty: ${optionTypeData.askQuantity}",
+                    modifier = Modifier.padding(4.dp)
+                )
+            }
 
             Row(modifier = Modifier.padding(8.dp)) {
                 Button(
