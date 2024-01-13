@@ -15,9 +15,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.dastanapps.marketstrategy.ui.screens.main.FutureOptionScreen
 import com.dastanapps.marketstrategy.ui.theme.MarketStrategyTheme
+import com.dastanapps.marketstrategy.utils.toast
 import com.dastanapps.marketstrategy.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -50,6 +52,10 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+
+        mainViewModel.toastCallback = {
+            toast("Order Executed")
         }
     }
 }

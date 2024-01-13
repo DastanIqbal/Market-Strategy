@@ -3,6 +3,7 @@ package com.dastanapps.marketstrategy.data.models
 import com.dastanapps.marketstrategy.data.nse.models.response.FutureOptionIndicesResponse
 import com.dastanapps.marketstrategy.utils.toNullDouble
 import com.dastanapps.marketstrategy.utils.toNullEmpty
+import com.google.gson.Gson
 
 /**
  * Author: Iqbal Ahmed
@@ -29,6 +30,10 @@ data class OptionTypeData(
     val changeinOpenInterest: Double,
     val openInterest: Double,
 ) {
+
+    fun toJson(): String{
+        return Gson().toJson(this)
+    }
     companion object {
         fun empty() = OptionTypeData(
             OptionType.NONE,

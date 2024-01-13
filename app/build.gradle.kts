@@ -73,13 +73,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-    implementation("com.jakewharton.threetenabp:threetenabp:1.4.6")
+    implementation(libs.threetenabp)
 
     // Network
-
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
 
     // define a BOM and its version
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
@@ -87,17 +86,20 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor")
 
     // DI
-
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt("com.google.dagger:hilt-compiler:2.50")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // For instrumentation tests
-    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.50")
-    kaptAndroidTest("com.google.dagger:hilt-compiler:2.50")
+    androidTestImplementation (libs.hilt.android.testing)
+    kaptAndroidTest(libs.hilt.compiler)
 
     // For local unit tests
-    testImplementation("com.google.dagger:hilt-android-testing:2.50")
-    kaptTest("com.google.dagger:hilt-compiler:2.50")
+    testImplementation(libs.hilt.android.testing)
+    kaptTest(libs.hilt.compiler)
+
+    // Database
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
 }
 
 kapt {

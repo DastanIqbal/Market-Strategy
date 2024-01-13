@@ -11,6 +11,11 @@ import dagger.hilt.android.HiltAndroidApp
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
+        INSTANCE = this
         AndroidThreeTen.init(this)
+    }
+
+    companion object{
+        lateinit var INSTANCE: App
     }
 }

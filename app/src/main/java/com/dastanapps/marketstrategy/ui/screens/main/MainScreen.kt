@@ -2,18 +2,13 @@ package com.dastanapps.marketstrategy.ui.screens.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -122,12 +117,25 @@ fun CallPutItem(
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row {
-                Text(text = "Option: ${optionTypeData.type.name}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
-                Text(text = "LTP: ${optionTypeData.lastTradedPrice}", modifier = Modifier.padding(4.dp))
+                Text(
+                    text = "Option: ${optionTypeData.type.name}",
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .padding(end = 8.dp)
+                )
+                Text(
+                    text = "LTP: ${optionTypeData.lastTradedPrice}",
+                    modifier = Modifier.padding(4.dp)
+                )
                 Text(text = "OI: ${optionTypeData.openInterest}", modifier = Modifier.padding(4.dp))
             }
             Row {
-                Text(text = "Bid Price: ${optionTypeData.bidPrice}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
+                Text(
+                    text = "Bid Price: ${optionTypeData.bidPrice}",
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .padding(end = 8.dp)
+                )
                 Text(
                     text = "Qty: ${optionTypeData.bidQuantity}",
                     modifier = Modifier.padding(4.dp)
@@ -135,7 +143,12 @@ fun CallPutItem(
             }
 
             Row {
-                Text(text = "Ask Price: ${optionTypeData.askPrice}", modifier = Modifier.padding(4.dp).padding(end = 8.dp))
+                Text(
+                    text = "Ask Price: ${optionTypeData.askPrice}",
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .padding(end = 8.dp)
+                )
                 Text(
                     text = "Qty: ${optionTypeData.askQuantity}",
                     modifier = Modifier.padding(4.dp)
@@ -146,14 +159,18 @@ fun CallPutItem(
                 Button(
                     modifier = Modifier.padding(end = 8.dp),
                     shape = RoundedCornerShape(8.dp),
-                    onClick = { optionActionClick.invoke(optionTypeData, TradeOption.BUY) }) {
+                    onClick = {
+                        optionActionClick.invoke(optionTypeData, TradeOption.BUY)
+                    }) {
                     Text(text = "Buy")
                 }
 
                 Button(
                     modifier = Modifier,
                     shape = RoundedCornerShape(8.dp),
-                    onClick = { optionActionClick.invoke(optionTypeData, TradeOption.SELL) }) {
+                    onClick = {
+                        optionActionClick.invoke(optionTypeData, TradeOption.SELL)
+                    }) {
                     Text(text = "Sell")
                 }
             }

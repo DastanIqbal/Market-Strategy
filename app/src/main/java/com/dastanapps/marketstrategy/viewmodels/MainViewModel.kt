@@ -1,14 +1,14 @@
 package com.dastanapps.marketstrategy.viewmodels
 
 import android.util.Log
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dastanapps.marketstrategy.data.models.FutureOptionIndicesData
 import com.dastanapps.marketstrategy.data.models.OptionTypeData
+import com.dastanapps.marketstrategy.db.AppDatabase
+import com.dastanapps.marketstrategy.db.models.OrderStatus
+import com.dastanapps.marketstrategy.db.table.OrderEntity
 import com.dastanapps.marketstrategy.domain.FutureOptionUseCase
 import com.dastanapps.marketstrategy.domain.GetDaysAverageUseCase
 import com.dastanapps.marketstrategy.domain.models.FutureOptionDisplayB
@@ -21,8 +21,9 @@ import com.dastanapps.marketstrategy.ui.theme.component.SearchBoxState
 import com.dastanapps.marketstrategy.viewmodels.models.SelectedValue
 import com.dastanapps.marketstrategy.viewmodels.models.SelectedValueItem
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Exception
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 /**
@@ -34,7 +35,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getDaysAverageUseCase: GetDaysAverageUseCase,
-    private val futureOptionUseCase: FutureOptionUseCase
+    private val futureOptionUseCase: FutureOptionUseCase,
+    private val database: AppDatabase
 ) : ViewModel() {
 
     private val futureOptionList = mutableStateOf<List<String>>(
@@ -46,7 +48,7 @@ class MainViewModel @Inject constructor(
     private var _futureOptionIndicesData: FutureOptionIndicesData? = null
 
     private val selectedValue = SelectedValue(
-        symbol = SelectedValueItem(mutableStateOf("")){
+        symbol = SelectedValueItem(mutableStateOf("")) {
             futureOptionData(it)
         },
         strikePrice = SelectedValueItem(mutableStateOf("")),
@@ -58,14 +60,28 @@ class MainViewModel @Inject constructor(
             it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
                     it.expiryDate == selectedValue.expiryDate.value.value
         }
-        futureOptionDisplayData.value.fnoCallPutList.value = list?.toList()?: emptyList()
+        futureOptionDisplayData.value.fnoCallPutList.value = list?.toList() ?: emptyList()
     }
 
-    private val optionActionClick:(OptionTypeData, TradeOption) ->Unit = { data, trade ->
-        Log.d("TAG", data.toString())
-        Log.d("TAG", trade.toString())
-    }
+    var toastCallback:((String)->Unit)? = null
 
+    private val optionActionClick: (OptionTypeData, TradeOption) -> Unit = { data, trade,->
+        viewModelScope.launch(Dispatchers.IO) {
+            database.orderDao().insertOrder(
+                OrderEntity(
+                    symbol = selectedValue.symbol.value.value,
+                    tradeType = trade.name,
+                    strikePrice = data.strikePrice.toString(),
+                    expiryDate = data.expiryDate,
+                    json = data.toJson(),
+                    status = OrderStatus.PENDING.name
+                )
+            )
+            withContext(Dispatchers.Main){
+                toastCallback?.invoke("Order Executed")
+            }
+        }
+    }
 
 
     val futureOptionState by lazy {
