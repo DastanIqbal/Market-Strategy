@@ -2,6 +2,7 @@ package com.dastanapps.marketstrategy.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -19,8 +20,8 @@ import com.dastanapps.marketstrategy.viewmodels.MainViewModel
 @Composable
 fun Navigation(
     navController: NavHostController,
-    mainViewModel: MainViewModel,
     modifier: Modifier,
+    mainViewModel: MainViewModel = hiltViewModel(),
     startDestination: String = "home"
 ) {
     NavHost(navController, startDestination) {

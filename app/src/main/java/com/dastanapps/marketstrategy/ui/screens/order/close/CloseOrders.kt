@@ -86,6 +86,13 @@ fun CloseOrderItem(entity: OrderEntity) {
                     modifier = Modifier.padding(4.dp)
                 )
             }
+
+            Row {
+                Text(
+                    text = "Lots: ${entity.lots}",
+                    modifier = Modifier.padding(4.dp)
+                )
+            }
         }
     }
 }

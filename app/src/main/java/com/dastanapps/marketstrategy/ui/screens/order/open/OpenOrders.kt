@@ -2,6 +2,7 @@ package com.dastanapps.marketstrategy.ui.screens.order.open
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -31,7 +32,7 @@ fun OpenOrders(
     viewModel: OrdersViewModel = hiltViewModel()
 ) {
     viewModel.fetchOpenOrders()
-    LazyColumn {
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(viewModel.openOrders.value) {
             OpenOrderItem(it){
                 viewModel.closeOrder(it)
@@ -103,6 +104,11 @@ fun OpenOrderItem(entity: OrderEntity,closeOrderClick:(OrderEntity)->Unit) {
                         Text(text = "Buy")
                     }
                 }
+
+                Text(
+                    text = "Lots: ${entity.lots}",
+                    modifier = Modifier.padding(4.dp)
+                )
             }
         }
     }

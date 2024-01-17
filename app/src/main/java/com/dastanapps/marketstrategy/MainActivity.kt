@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 //            )
             val navController = rememberNavController()
             MarketStrategyTheme {
-                Navigation(navController, mainViewModel, Modifier)
+                Navigation(navController, Modifier)
             }
         }
 

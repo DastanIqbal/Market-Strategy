@@ -28,6 +28,9 @@ data class OrderEntity(
     @ColumnInfo(name = "expiry_date")
     var expiryDate: String?=null,
 
+    @ColumnInfo(name = "lots")
+    var lots: Int?=null,
+
     @ColumnInfo(name = "json")
     var json: String?=null,
 

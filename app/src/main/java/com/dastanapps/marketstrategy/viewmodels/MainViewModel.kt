@@ -58,7 +58,7 @@ class MainViewModel @Inject constructor(
     var toastCallback: ((String) -> Unit)? = null
     var showHistory: (() -> Unit)? = null
 
-    private val optionActionClick: (OptionTypeData, TradeOption) -> Unit = { data, trade ->
+    private val optionActionClick: (OptionTypeData, Int, TradeOption) -> Unit = { data,lots, trade ->
         viewModelScope.launch(Dispatchers.IO) {
             database.orderDao().insertOrder(
                 OrderEntity(
@@ -66,6 +66,7 @@ class MainViewModel @Inject constructor(
                     tradeType = trade.name,
                     strikePrice = data.strikePrice.toString(),
                     expiryDate = data.expiryDate,
+                    lots = lots,
                     json = data.toJson(),
                     status = OrderStatus.PENDING.name
                 )
