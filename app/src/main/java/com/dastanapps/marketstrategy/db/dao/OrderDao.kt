@@ -16,12 +16,17 @@ import com.dastanapps.marketstrategy.db.table.OrderEntity
 interface OrderDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertOrder(order: OrderEntity)
+    suspend fun insertOrder(order: OrderEntity)
 
     @Query("SELECT * FROM `Order`")
-    fun getAllOrder(): List<OrderEntity>
+    suspend fun getAllOrder(): List<OrderEntity>
 
     @Query("SELECT * FROM `Order` WHERE id = :id")
-    fun getOrder(id: Int): OrderEntity
+    suspend fun getOrder(id: Int): OrderEntity
+    @Query("SELECT * FROM `Order` WHERE status = :status")
+    suspend fun getOrdersByStatus(status: String) : List<OrderEntity>
+
+    @Query("UPDATE `Order` SET status = :status WHERE id = :id")
+    suspend fun closeOrder(id: Int?, status: String)
 }
 

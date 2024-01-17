@@ -1,19 +1,28 @@
 package com.dastanapps.marketstrategy.ui.screens.main
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,69 +45,98 @@ data class FutureOptionState(
     val selectedItem: SelectedValue,
     val displayData: MutableState<FutureOptionDisplayB>,
     val getQuotesClick: () -> Unit,
-    val optionActionClick: (OptionTypeData, TradeOption) -> Unit
+    val optionActionClick: (OptionTypeData, TradeOption) -> Unit,
+    val showHistory: () -> Unit
 )
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FutureOptionScreen(
+fun HomeScreen(
     state: FutureOptionState,
     modifier: Modifier = Modifier
 ) {
     val selectedValue = state.selectedItem
     val fnoCallPutList = state.displayData.value.fnoCallPutList
-    LazyColumn(modifier = modifier) {
-        item {
-            Text(
-                text = "Underlying Value: ${state.displayData.value.currentPrice}",
-                modifier = Modifier.padding(16.dp)
-            )
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Start) {
-                Dropdown(
-                    items = state.optionList.value,
-                    selectedItem = selectedValue.symbol.value.value.ifEmpty { "Symbol" },
-                    modifier = Modifier
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            TopAppBar(title = { Text(text = "Market Strategy") })
+        },
+        containerColor = MaterialTheme.colorScheme.background,
+        contentColor = MaterialTheme.colorScheme.onBackground,
+    ) { innerPadding ->
+
+        LazyColumn(modifier = modifier.padding(innerPadding)) {
+            item {
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    selectedValue.symbol.value.value = it
-                    selectedValue.symbol.onValueChange?.invoke(it)
+                    Text(
+                        text = "Underlying Value: ${state.displayData.value.currentPrice}",
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .align(Alignment.CenterVertically)
+                    )
+
+                    Icon(
+                        imageVector = Icons.Default.DateRange,
+                        contentDescription = "History",
+                        modifier = Modifier
+                            .padding(16.dp)
+                            .align(Alignment.CenterVertically)
+                            .clickable { state.showHistory.invoke() }
+                    )
                 }
-
-                Dropdown(
-                    items = state.displayData.value.filterBy.strikePrice.map { it.toString() },
-                    selectedItem = selectedValue.strikePrice.value.value.ifEmpty {
-                        if (selectedValue.symbol.value.value.isNotEmpty()) "Strike Price" else ""
-                    },
-                    modifier = Modifier
-                ) {
-                    selectedValue.strikePrice.value.value = it
-                    selectedValue.strikePrice.onValueChange?.invoke(it)
-                }
-
-                Dropdown(
-                    items = state.displayData.value.filterBy.expiriesDate.map { it.toString() },
-                    selectedItem = selectedValue.expiryDate.value.value.ifEmpty {
-                        if (selectedValue.symbol.value.value.isNotEmpty()) "Expiry Date" else ""
-                    },
-                    modifier = Modifier
-                ) {
-                    selectedValue.expiryDate.value.value = it
-                    selectedValue.expiryDate.onValueChange?.invoke(it)
-                }
-            }
-
-
-            if (selectedValue.canShowQuote()) {
-                Button(
-                    modifier = Modifier.padding(16.dp),
-                    onClick = {
-                        state.getQuotesClick.invoke()
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Start) {
+                    Dropdown(
+                        items = state.optionList.value,
+                        selectedItem = selectedValue.symbol.value.value.ifEmpty { "Symbol" },
+                        modifier = Modifier
+                    ) {
+                        selectedValue.symbol.value.value = it
+                        selectedValue.symbol.onValueChange?.invoke(it)
                     }
-                ) {
-                    Text(text = "Get Quotes")
+
+                    Dropdown(
+                        items = state.displayData.value.filterBy.strikePrice.map { it.toString() },
+                        selectedItem = selectedValue.strikePrice.value.value.ifEmpty {
+                            if (selectedValue.symbol.value.value.isNotEmpty()) "Strike Price" else ""
+                        },
+                        modifier = Modifier
+                    ) {
+                        selectedValue.strikePrice.value.value = it
+                        selectedValue.strikePrice.onValueChange?.invoke(it)
+                    }
+
+                    Dropdown(
+                        items = state.displayData.value.filterBy.expiriesDate.map { it.toString() },
+                        selectedItem = selectedValue.expiryDate.value.value.ifEmpty {
+                            if (selectedValue.symbol.value.value.isNotEmpty()) "Expiry Date" else ""
+                        },
+                        modifier = Modifier
+                    ) {
+                        selectedValue.expiryDate.value.value = it
+                        selectedValue.expiryDate.onValueChange?.invoke(it)
+                    }
+                }
+
+
+                if (selectedValue.canShowQuote()) {
+                    Button(
+                        modifier = Modifier.padding(16.dp),
+                        onClick = {
+                            state.getQuotesClick.invoke()
+                        }
+                    ) {
+                        Text(text = "Get Quotes")
+                    }
                 }
             }
-        }
-        items(fnoCallPutList.value) {
-            CallPutItem(optionTypeData = it, state.optionActionClick)
+            items(fnoCallPutList.value) {
+                CallPutItem(optionTypeData = it, state.optionActionClick)
+            }
         }
     }
 }

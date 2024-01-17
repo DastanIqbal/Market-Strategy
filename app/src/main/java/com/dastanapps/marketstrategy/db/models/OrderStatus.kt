@@ -10,7 +10,9 @@ enum class OrderStatus {
     UNKNOWN,
     PENDING,
     EXECUTED,
+    CLOSED,
     CANCELLED,
     REJECTED,
     EXPIRED,
+    COMPLETED
 }

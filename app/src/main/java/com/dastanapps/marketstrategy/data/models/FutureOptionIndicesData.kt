@@ -32,8 +32,9 @@ data class OptionTypeData(
 ) {
 
     fun toJson(): String{
-        return Gson().toJson(this)
+        return com.dastanapps.marketstrategy.utils.toJson(this)
     }
+
     companion object {
         fun empty() = OptionTypeData(
             OptionType.NONE,

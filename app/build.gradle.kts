@@ -87,6 +87,9 @@ dependencies {
 
     // DI
     implementation(libs.hilt.android)
+//    implementation(libs.hilt.android.compose)
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
     kapt(libs.hilt.compiler)
 
     // For instrumentation tests
@@ -99,7 +102,11 @@ dependencies {
 
     // Database
     implementation(libs.androidx.room.runtime)
+    implementation("androidx.room:room-ktx:2.6.1")
     kapt(libs.androidx.room.compiler)
+
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
 }
 
 kapt {

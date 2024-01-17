@@ -56,6 +56,7 @@ class MainViewModel @Inject constructor(
     )
 
     var toastCallback: ((String) -> Unit)? = null
+    var showHistory: (() -> Unit)? = null
 
     private val optionActionClick: (OptionTypeData, TradeOption) -> Unit = { data, trade ->
         viewModelScope.launch(Dispatchers.IO) {
@@ -87,7 +88,8 @@ class MainViewModel @Inject constructor(
             selectedItem = selectedValue,
             displayData = futureOptionDisplayData,
             getQuotesClick = { getQuotes() },
-            optionActionClick = optionActionClick
+            optionActionClick = optionActionClick,
+            showHistory = { showHistory?.invoke() }
         )
     }
 
