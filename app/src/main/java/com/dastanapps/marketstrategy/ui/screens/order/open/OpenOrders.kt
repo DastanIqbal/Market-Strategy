@@ -54,6 +54,12 @@ fun OpenOrderItem(entity: OrderEntity,closeOrderClick:(OrderEntity)->Unit) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row {
                 Text(
+                    text = "${entity.symbol} ${optionTypeData.strikePrice} ${optionTypeData.expiryDate}",
+                    modifier = Modifier.padding(4.dp)
+                )
+            }
+            Row {
+                Text(
                     text = "Option: ${optionTypeData.type.name}",
                     modifier = Modifier
                         .padding(4.dp)
@@ -65,31 +71,7 @@ fun OpenOrderItem(entity: OrderEntity,closeOrderClick:(OrderEntity)->Unit) {
                 )
                 Text(text = "OI: ${optionTypeData.openInterest}", modifier = Modifier.padding(4.dp))
             }
-            Row {
-                Text(
-                    text = "Bid Price: ${optionTypeData.bidPrice}",
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .padding(end = 8.dp)
-                )
-                Text(
-                    text = "Qty: ${optionTypeData.bidQuantity}",
-                    modifier = Modifier.padding(4.dp)
-                )
-            }
 
-            Row {
-                Text(
-                    text = "Ask Price: ${optionTypeData.askPrice}",
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .padding(end = 8.dp)
-                )
-                Text(
-                    text = "Qty: ${optionTypeData.askQuantity}",
-                    modifier = Modifier.padding(4.dp)
-                )
-            }
 
             Row(modifier = Modifier.padding(8.dp)) {
                 Button(
