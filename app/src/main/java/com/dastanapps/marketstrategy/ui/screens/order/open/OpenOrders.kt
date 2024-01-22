@@ -13,7 +13,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -30,6 +29,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.dastanapps.marketstrategy.data.models.OptionTypeData
 import com.dastanapps.marketstrategy.db.table.OrderEntity
 import com.dastanapps.marketstrategy.ui.screens.main.models.TradeOption
+import com.dastanapps.marketstrategy.ui.theme.component.CircularProgress
+import com.dastanapps.marketstrategy.ui.theme.component.Empty
+import com.dastanapps.marketstrategy.ui.theme.component.Error
 import com.dastanapps.marketstrategy.utils.fromJson
 import com.dastanapps.marketstrategy.viewmodels.OrdersViewModel
 
@@ -44,36 +46,9 @@ fun OpenOrders(
     viewModel: OrdersViewModel = hiltViewModel()
 ) {
     val refresh = remember { mutableStateOf(false) }
+    val error = remember { mutableStateOf(false) }
     val reloadata = remember { mutableStateOf(true) }
-    if (refresh.value) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            CircularProgressIndicator()
-        }
-        return
-    }
-    if (reloadata.value) {
-        viewModel.fetchOpenOrders()
-        reloadata.value = false
-    }
     LazyColumn(modifier = Modifier.fillMaxSize()) {
-        if (viewModel.openOrders.value.isEmpty()) {
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 0.dp, end = 16.dp),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(text = "No Data Found", modifier = Modifier)
-                }
-            }
-            return@LazyColumn
-        }
         item {
             Row(
                 modifier = Modifier
@@ -86,12 +61,37 @@ fun OpenOrders(
                     contentDescription = "Refresh",
                     modifier = Modifier.clickable {
                         refresh.value = true
-                        viewModel.refresh() {
-                            refresh.value = false
-                        }
+                        viewModel.refresh(
+                            block = {
+                                refresh.value = false
+                            },
+                            error = {
+                                refresh.value = false
+                                error.value = true
+                            })
                     }
                 )
             }
+            if (refresh.value) {
+                CircularProgress(modifier = Modifier.fillMaxWidth())
+            }
+        }
+
+        item {
+            if (error.value) {
+                Error()
+                error.value = false
+            }
+            if (reloadata.value) {
+                viewModel.fetchOpenOrders()
+                reloadata.value = false
+            }
+        }
+        if (viewModel.openOrders.value.isEmpty()) {
+            item {
+                Empty()
+            }
+            return@LazyColumn
         }
         items(viewModel.openOrders.value) {
             OpenOrderItem(it) {

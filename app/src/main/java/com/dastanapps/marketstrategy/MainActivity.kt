@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
         }
 
         mainViewModel.toastCallback = {
-            toast("Order Executed")
+            toast(it)
         }
     }
 }

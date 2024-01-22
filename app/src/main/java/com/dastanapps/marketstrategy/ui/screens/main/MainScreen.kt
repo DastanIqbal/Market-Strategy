@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -108,27 +107,33 @@ fun HomeScreen(
                         selectedValue.symbol.onValueChange?.invoke(it)
                     }
 
-                    Dropdown(
-                        items = state.displayData.value.filterBy.strikePrice.map { it.toString() },
-                        selectedItem = selectedValue.strikePrice.value.value.ifEmpty {
-                            if (selectedValue.symbol.value.value.isNotEmpty()) "Strike Price" else ""
-                        },
-                        modifier = Modifier
-                    ) {
-                        selectedValue.strikePrice.value.value = it
-                        selectedValue.strikePrice.onValueChange?.invoke(it)
-                    }
+                    val strikePriceData =
+                        state.displayData.value.filterBy.strikePrice.map { it.toString() }
+                    if (strikePriceData.isNotEmpty())
+                        Dropdown(
+                            items = strikePriceData,
+                            selectedItem = selectedValue.strikePrice.value.value.ifEmpty {
+                                if (selectedValue.symbol.value.value.isNotEmpty()) "Strike Price" else ""
+                            },
+                            modifier = Modifier
+                        ) {
+                            selectedValue.strikePrice.value.value = it
+                            selectedValue.strikePrice.onValueChange?.invoke(it)
+                        }
 
-                    Dropdown(
-                        items = state.displayData.value.filterBy.expiriesDate.map { it.toString() },
-                        selectedItem = selectedValue.expiryDate.value.value.ifEmpty {
-                            if (selectedValue.symbol.value.value.isNotEmpty()) "Expiry Date" else ""
-                        },
-                        modifier = Modifier
-                    ) {
-                        selectedValue.expiryDate.value.value = it
-                        selectedValue.expiryDate.onValueChange?.invoke(it)
-                    }
+                    val expiryData =
+                        state.displayData.value.filterBy.expiriesDate.map { it.toString() }
+                    if (expiryData.isNotEmpty())
+                        Dropdown(
+                            items = state.displayData.value.filterBy.expiriesDate.map { it.toString() },
+                            selectedItem = selectedValue.expiryDate.value.value.ifEmpty {
+                                if (selectedValue.symbol.value.value.isNotEmpty()) "Expiry Date" else ""
+                            },
+                            modifier = Modifier
+                        ) {
+                            selectedValue.expiryDate.value.value = it
+                            selectedValue.expiryDate.onValueChange?.invoke(it)
+                        }
                 }
 
 
@@ -203,7 +208,7 @@ fun CallPutItem(
                 )
             }
 
-            Row{
+            Row {
                 Text(
                     text = "Lots:",
                     modifier = Modifier

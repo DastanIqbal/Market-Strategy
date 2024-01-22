@@ -25,6 +25,6 @@ object DataSourceModule {
 
     @Provides
     fun provideDataSource(@ApplicationContext context: Context, networkExecutor: NetworkExecutor, dispatchers: AppDispatchers): INSEDataSource{
-        return if(BuildConfig.DEBUG) NSEMockDatasource(context) else NSEDataSource(networkExecutor,dispatchers)
+        return /*if(BuildConfig.DEBUG) NSEMockDatasource(context) else*/ NSEDataSource(networkExecutor,dispatchers)
     }
 }

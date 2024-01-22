@@ -1,6 +1,7 @@
 package com.dastanapps.marketstrategy.ui.screens.order
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +16,7 @@ import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.dastanapps.marketstrategy.ui.screens.order.close.CloseOrders
 import com.dastanapps.marketstrategy.ui.screens.order.models.TabItem
@@ -75,7 +77,8 @@ fun OrderScreen() {
                 state = pagerState,
                 modifier = Modifier
                     .padding(innerPadding)
-                    .weight(1f)
+                    .weight(1f),
+                verticalAlignment = Alignment.Top
             ) { page ->
                 tablist[page].content()
             }

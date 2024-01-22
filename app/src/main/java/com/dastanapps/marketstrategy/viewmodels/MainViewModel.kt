@@ -107,6 +107,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun futureOptionData(symbol: String) {
+        futureOptionDisplayData.value = FutureOptionDisplayB.empty()
         viewModelScope.launch {
             try {
                 val data = futureOptionUseCase.run(FutureOptionParam(symbol))
@@ -114,19 +115,26 @@ class MainViewModel @Inject constructor(
                 futureOptionDisplayData.value = data.map()
             } catch (e: Exception) {
                 e.printStackTrace()
+                toastCallback?.invoke("Unable to fetch data")
             }
         }
     }
 
     private fun getQuotes() {
         viewModelScope.launch {
-            val data = futureOptionUseCase.run(FutureOptionParam(selectedValue.symbol.value.value))
-            _futureOptionIndicesData = data
-            val list = _futureOptionIndicesData?.records?.filter {
-                it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
-                        it.expiryDate == selectedValue.expiryDate.value.value
+            try {
+                val data =
+                    futureOptionUseCase.run(FutureOptionParam(selectedValue.symbol.value.value))
+                _futureOptionIndicesData = data
+                val list = _futureOptionIndicesData?.records?.filter {
+                    it.strikePrice == selectedValue.strikePrice.value.value.toDouble() &&
+                            it.expiryDate == selectedValue.expiryDate.value.value
+                }
+                futureOptionDisplayData.value.fnoCallPutList.value = list?.toList() ?: emptyList()
+            }catch (e:Exception){
+                e.printStackTrace()
+                toastCallback?.invoke("Unable to fetch data")
             }
-            futureOptionDisplayData.value.fnoCallPutList.value = list?.toList() ?: emptyList()
         }
     }
 }

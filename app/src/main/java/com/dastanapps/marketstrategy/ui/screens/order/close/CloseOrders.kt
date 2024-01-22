@@ -1,6 +1,5 @@
 package com.dastanapps.marketstrategy.ui.screens.order.close
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.dastanapps.marketstrategy.data.models.OptionTypeData
 import com.dastanapps.marketstrategy.db.table.OrderEntity
+import com.dastanapps.marketstrategy.ui.theme.component.Empty
 import com.dastanapps.marketstrategy.utils.fromJson
 import com.dastanapps.marketstrategy.viewmodels.OrdersViewModel
 
@@ -34,14 +34,7 @@ fun CloseOrders(
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         if (viewModel.closeOrders.value.isEmpty()) {
             item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 0.dp, end = 16.dp),
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(text = "No Data Found", modifier = Modifier)
-                }
+                Empty()
             }
             return@LazyColumn
         }

@@ -12,8 +12,6 @@ import com.dastanapps.marketstrategy.domain.models.FutureOptionParam
 import com.dastanapps.marketstrategy.utils.roundTo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.math.MathContext
-import java.text.DecimalFormat
 import javax.inject.Inject
 
 /**
@@ -48,42 +46,47 @@ class OrdersViewModel @Inject constructor(
         }
     }
 
-    fun refresh(block: () -> Unit) {
+    fun refresh(block: () -> Unit, error: () -> Unit) {
         viewModelScope.launch {
-            val _this = this@OrdersViewModel
-            val symbols = appDatabase.orderDao().getSymbols()
-            val results = arrayListOf<OrderEntity>()
-            symbols.forEach {
-                val result = useCase.run(FutureOptionParam(it))
-                val list = openOrders.value.filter { item -> item.symbol == it }
+            try {
+                val _this = this@OrdersViewModel
+                val symbols = appDatabase.orderDao().getSymbols()
+                val results = arrayListOf<OrderEntity>()
+                symbols.forEach {
+                    val result = useCase.run(FutureOptionParam(it))
+                    val list = openOrders.value.filter { item -> item.symbol == it }
 
-                list.filter { order ->
-                    if (order.optionType == OptionType.CALL.name) {
-                        val filteredData = result.records.filter {
-                            it.type == OptionType.CALL &&
-                                    it.strikePrice.toString() == order.strikePrice &&
-                                    it.expiryDate == order.expiryDate
+                    list.filter { order ->
+                        if (order.optionType == OptionType.CALL.name) {
+                            val filteredData = result.records.filter {
+                                it.type == OptionType.CALL &&
+                                        it.strikePrice.toString() == order.strikePrice &&
+                                        it.expiryDate == order.expiryDate
+                            }
+                            filteredData.map {
+                                order.ltpChange = it.change.roundTo()
+                            }
+                            results.add(order)
+                        } else {
+                            val filteredData = result.records.filter {
+                                it.type == OptionType.CALL &&
+                                        it.strikePrice.toString() == order.strikePrice &&
+                                        it.expiryDate == order.expiryDate
+                            }
+                            filteredData.map {
+                                order.ltpChange = it.change.roundTo()
+                            }
+                            results.add(order)
                         }
-                        filteredData.map {
-                            order.ltpChange = (-0.234242).roundTo() //it.change.roundTo()
-                        }
-                        results.add(order)
-                    } else {
-                        val filteredData = result.records.filter {
-                            it.type == OptionType.CALL &&
-                                    it.strikePrice.toString() == order.strikePrice &&
-                                    it.expiryDate == order.expiryDate
-                        }
-                        filteredData.map {
-                            order.ltpChange = 0.234242.roundTo()//it.change.roundTo()
-                        }
-                         results.add(order)
                     }
                 }
-            }
 
-            openOrders.value = results
-            block.invoke()
+                openOrders.value = results
+                block.invoke()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                error.invoke()
+            }
         }
     }
 }
