@@ -64,6 +64,8 @@ class MainViewModel @Inject constructor(
                 OrderEntity(
                     symbol = selectedValue.symbol.value.value,
                     tradeType = trade.name,
+                    optionType = data.type.name,
+                    ltp = data.lastTradedPrice.toString(),
                     strikePrice = data.strikePrice.toString(),
                     expiryDate = data.expiryDate,
                     lots = lots,

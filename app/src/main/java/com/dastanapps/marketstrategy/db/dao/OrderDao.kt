@@ -28,5 +28,8 @@ interface OrderDao {
 
     @Query("UPDATE `Order` SET status = :status WHERE id = :id")
     suspend fun closeOrder(id: Int?, status: String)
+
+    @Query("SELECT DISTINCT symbol FROM `Order`")
+    suspend fun getSymbols():List<String>
 }
 

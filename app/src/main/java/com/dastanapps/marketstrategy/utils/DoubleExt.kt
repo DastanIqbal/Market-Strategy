@@ -1,5 +1,7 @@
 package com.dastanapps.marketstrategy.utils
 
+import java.text.DecimalFormat
+
 
 /**
  * Author: Iqbal Ahmed
@@ -17,4 +19,10 @@ fun Long?.toNullDouble(): Double {
 
 fun Int?.toNullDouble(): Double {
     return this?.toDouble()?:0.0
+}
+
+fun Double.roundTo(): String {
+    val df = DecimalFormat("#.##");
+    val roundedNumber = df.format(this);
+    return roundedNumber
 }
